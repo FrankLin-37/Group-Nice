@@ -13,6 +13,8 @@ export default{
     <RouterLink class="routeItem" to="/">One</RouterLink>
     <RouterLink class="routeItem" to="/Two">Two</RouterLink>
     <RouterLink class="routeItem" to="/Three">贊助我們</RouterLink>
+    <RouterLink class="routeItem" to="/TaiwanMap">Map</RouterLink>
+
 </div>
     
 </template>

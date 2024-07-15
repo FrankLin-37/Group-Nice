@@ -16,6 +16,10 @@
         justify-content: center;
         align-content: center;
         flex-direction: column;
+        flex-wrap: wrap;
         
+        h1{
+            margin-left: 3.5%;
+        }
     }
 </style>
