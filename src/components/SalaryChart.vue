@@ -81,7 +81,11 @@ export default {
     methods: {
         Tester() {
 
+        },
+        createlabel(){
+            
             let labels = ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
+            
             var itemData1 = []
             var itemData2 = []
             var itemData3 = []
@@ -163,7 +167,7 @@ export default {
                 config,
                 )
             }
-        },
+        }
     },
     created() {
         this.Title1 = salTitle1[0].need1
@@ -181,7 +185,7 @@ export default {
 
 <template>
     <button @click="Tester()">Btn</button>
-    <select name="" id="" v-model="this.checked1">
+    <select name="" id="" v-model="this.checked1" @change =  "this.createlabel()">
         <option value="">請選擇</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
@@ -241,7 +245,7 @@ export default {
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
-    <select name="" id="" v-model="this.checked2">
+    <select name="" id="" v-model="this.checked2" @change = "this.createlabel()">
         <option value="">請選擇</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
@@ -301,7 +305,7 @@ export default {
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
-    <select name="" id="" v-model="this.checked3">
+    <select name="" id="" v-model="this.checked3" @change = "this.createlabel()">
         <option value="">請選擇</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
@@ -361,7 +365,7 @@ export default {
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
-    <select name="" id="" v-model="this.checked4">
+    <select name="" id="" v-model="this.checked4" @change = "this.createlabel()">
         <option value="">請選擇</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
@@ -421,7 +425,7 @@ export default {
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
-    <select name="" id="" v-model="this.checked5">
+    <select name="" id="" v-model="this.checked5" @change = "this.createlabel()">
         <option value="">請選擇</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
