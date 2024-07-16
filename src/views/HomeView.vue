@@ -1,5 +1,15 @@
 <script>
-import 'youtube-background';    
+import location from '../stores/location';
+import { mapActions } from 'pinia';
+import 'youtube-background';
+export default{
+    methods:{
+        ...mapActions(location,["setPages"])
+    },
+    mounted(){
+        this.setPages(6)
+    },
+}
         jQuery(document).ready(function() {
             jQuery('[data-vbg]').youtube_background();
 
@@ -20,7 +30,7 @@ import 'youtube-background';
 <div class="longText">
     <div class="accordion" id="accordionPanelsStayOpenExample">
 <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+    <h2 class="accordion-header" id="panelsStayOpen-heading">
     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
         Accordion Item #1
     </button>
@@ -32,7 +42,7 @@ import 'youtube-background';
     </div>
 </div>
 <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+    <h2 class="accordion-header" id="panelsStayOpen-heading">
     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
         Accordion Item #2
     </button>
@@ -58,7 +68,7 @@ import 'youtube-background';
 </div>
 <div class="accordion" id="accordionPanelsStayOpenExample">
 <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+    <h2 class="accordion-header" id="panelsStayOpen-heading">
     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
         Accordion Item #1
     </button>
@@ -70,7 +80,7 @@ import 'youtube-background';
     </div>
 </div>
 <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+    <h2 class="accordion-header" id="panelsStayOpen-heading">
     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
         Accordion Item #2
     </button>

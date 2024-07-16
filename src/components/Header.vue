@@ -26,7 +26,7 @@ export default{
     font-size: 21px;
     background-color: #8A8675;
     transition: 0.5s;
-    opacity: 0.8;
+    position: fixed;
     .inheadertext{    
     width: 100%;
     height: 9dvh;
