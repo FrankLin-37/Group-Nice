@@ -74,6 +74,11 @@ export default {
             checked5: "",
             Title1: [],
             reset:0,
+            firstChoose1:0,
+            firstChoose2:0,
+            firstChoose3:0,
+            firstChoose4:0,
+            firstChoose5:0,
         }
     },
 
@@ -84,7 +89,7 @@ export default {
         },
         createlabel(){
             
-            let labels = ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']
+            let labels = ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028','2029', '2030']
             
             var itemData1 = []
             var itemData2 = []
@@ -184,21 +189,40 @@ export default {
 </script>
 
 <template>
-    <button @click="Tester()">Btn</button>
-    <select name="" id="" v-model="this.checked1" @change =  "this.createlabel()">
-        <option value="">請選擇</option>
+    <!-- <button @click="Tester()">Btn</button> -->
+
+    <select name="firstchoose" id="" v-model="firstChoose1">
+        <option value="0">請選擇</option>
+        <option value="1" >性別</option>
+        <option value="2" >年齡別</option>
+        <option value="3" >教育程度別</option>
+        <option value="4" >年齡及教育程度別</option>
+        <option value="5" >產業別</option>
+    </select>
+    
+    <select name="gender" id="" v-model="this.checked1" @change = "this.createlabel()" v-if="this.firstChoose1 ==1">
+        <option value="0">性別</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
+    </select>
+    <select name="age" id="" v-model="this.checked1" @change = "this.createlabel()" v-if="this.firstChoose1 ==2">
+        <option value="0">年齡別</option>
         <option value="3">{{ this.Title1[2] }}</option>
         <option value="4">{{ this.Title1[3] }}</option>
         <option value="5">{{ this.Title1[4] }}</option>
         <option value="6">{{ this.Title1[5] }}</option>
         <option value="7">{{ this.Title1[6] }}</option>
         <option value="8">{{ this.Title1[7] }}</option>
+    </select>
+    <select name="education" id="" v-model="this.checked1" @change = "this.createlabel()" v-if="this.firstChoose1 ==3">
+        <option value="0">教育程度別</option>
         <option value="9">{{ this.Title1[8] }}</option>
         <option value="10">{{ this.Title1[9] }}</option>
         <option value="11">{{ this.Title1[10] }}</option>
         <option value="12">{{ this.Title1[11] }}</option>
+    </select>
+    <select name="ageedu" id="" v-model="this.checked1" @change = "this.createlabel()" v-if="this.firstChoose1 ==4">
+        <option value="0">年齡及教育程度別</option>
         <option value="13">{{ this.Title1[12] }}</option>
         <option value="14">{{ this.Title1[13] }}</option>
         <option value="15">{{ this.Title1[14] }}</option>
@@ -223,6 +247,9 @@ export default {
         <option value="34">{{ this.Title1[33] }}</option>
         <option value="35">{{ this.Title1[34] }}</option>
         <option value="36">{{ this.Title1[35] }}</option>
+    </select>
+    <select name="industry" id="" v-model="this.checked1" @change = "this.createlabel()" v-if="this.firstChoose1 ==5">
+        <option value="0">產業別</option>
         <option value="37">{{ this.Title1[36] }}</option>
         <option value="38">{{ this.Title1[37] }}</option>
         <option value="39">{{ this.Title1[38] }}</option>
@@ -245,20 +272,38 @@ export default {
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
-    <select name="" id="" v-model="this.checked2" @change = "this.createlabel()">
-        <option value="">請選擇</option>
+    <select name="firstchoose" id="" v-model="firstChoose2">
+        <option value="0">請選擇</option>
+        <option value="1" >性別</option>
+        <option value="2" >年齡別</option>
+        <option value="3" >教育程度別</option>
+        <option value="4" >年齡及教育程度別</option>
+        <option value="5" >產業別</option>
+    </select>
+    
+    <select name="gender" id="" v-model="this.checked2" @change = "this.createlabel()" v-if="this.firstChoose2 ==1">
+        <option value="0">性別</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
+    </select>
+    <select name="age" id="" v-model="this.checked2" @change = "this.createlabel()" v-if="this.firstChoose2 ==2">
+        <option value="0">年齡別</option>
         <option value="3">{{ this.Title1[2] }}</option>
         <option value="4">{{ this.Title1[3] }}</option>
         <option value="5">{{ this.Title1[4] }}</option>
         <option value="6">{{ this.Title1[5] }}</option>
         <option value="7">{{ this.Title1[6] }}</option>
         <option value="8">{{ this.Title1[7] }}</option>
+    </select>
+    <select name="education" id="" v-model="this.checked2" @change = "this.createlabel()" v-if="this.firstChoose2 ==3">
+        <option value="0">教育程度別</option>
         <option value="9">{{ this.Title1[8] }}</option>
         <option value="10">{{ this.Title1[9] }}</option>
         <option value="11">{{ this.Title1[10] }}</option>
         <option value="12">{{ this.Title1[11] }}</option>
+    </select>
+    <select name="ageedu" id="" v-model="this.checked2" @change = "this.createlabel()" v-if="this.firstChoose2 ==4">
+        <option value="0">年齡及教育程度別</option>
         <option value="13">{{ this.Title1[12] }}</option>
         <option value="14">{{ this.Title1[13] }}</option>
         <option value="15">{{ this.Title1[14] }}</option>
@@ -283,6 +328,9 @@ export default {
         <option value="34">{{ this.Title1[33] }}</option>
         <option value="35">{{ this.Title1[34] }}</option>
         <option value="36">{{ this.Title1[35] }}</option>
+    </select>
+    <select name="industry" id="" v-model="this.checked2" @change = "this.createlabel()" v-if="this.firstChoose2 ==5">
+        <option value="0">產業別</option>
         <option value="37">{{ this.Title1[36] }}</option>
         <option value="38">{{ this.Title1[37] }}</option>
         <option value="39">{{ this.Title1[38] }}</option>
@@ -305,20 +353,38 @@ export default {
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
-    <select name="" id="" v-model="this.checked3" @change = "this.createlabel()">
-        <option value="">請選擇</option>
+    <select name="firstchoose" id="" v-model="firstChoose3">
+        <option value="0">請選擇</option>
+        <option value="1" >性別</option>
+        <option value="2" >年齡別</option>
+        <option value="3" >教育程度別</option>
+        <option value="4" >年齡及教育程度別</option>
+        <option value="5" >產業別</option>
+    </select>
+    
+    <select name="gender" id="" v-model="this.checked3" @change = "this.createlabel()" v-if="this.firstChoose3 ==1">
+        <option value="0">性別</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
+    </select>
+    <select name="age" id="" v-model="this.checked3" @change = "this.createlabel()" v-if="this.firstChoose3 ==2">
+        <option value="0">年齡別</option>
         <option value="3">{{ this.Title1[2] }}</option>
         <option value="4">{{ this.Title1[3] }}</option>
         <option value="5">{{ this.Title1[4] }}</option>
         <option value="6">{{ this.Title1[5] }}</option>
         <option value="7">{{ this.Title1[6] }}</option>
         <option value="8">{{ this.Title1[7] }}</option>
+    </select>
+    <select name="education" id="" v-model="this.checked3" @change = "this.createlabel()" v-if="this.firstChoose3 ==3">
+        <option value="0">教育程度別</option>
         <option value="9">{{ this.Title1[8] }}</option>
         <option value="10">{{ this.Title1[9] }}</option>
         <option value="11">{{ this.Title1[10] }}</option>
         <option value="12">{{ this.Title1[11] }}</option>
+    </select>
+    <select name="ageedu" id="" v-model="this.checked3" @change = "this.createlabel()" v-if="this.firstChoose3 ==4">
+        <option value="0">年齡及教育程度別</option>
         <option value="13">{{ this.Title1[12] }}</option>
         <option value="14">{{ this.Title1[13] }}</option>
         <option value="15">{{ this.Title1[14] }}</option>
@@ -343,6 +409,9 @@ export default {
         <option value="34">{{ this.Title1[33] }}</option>
         <option value="35">{{ this.Title1[34] }}</option>
         <option value="36">{{ this.Title1[35] }}</option>
+    </select>
+    <select name="industry" id="" v-model="this.checked3" @change = "this.createlabel()" v-if="this.firstChoose3 ==5">
+        <option value="0">產業別</option>
         <option value="37">{{ this.Title1[36] }}</option>
         <option value="38">{{ this.Title1[37] }}</option>
         <option value="39">{{ this.Title1[38] }}</option>
@@ -365,20 +434,38 @@ export default {
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
-    <select name="" id="" v-model="this.checked4" @change = "this.createlabel()">
-        <option value="">請選擇</option>
+    <select name="firstchoose" id="" v-model="firstChoose4">
+        <option value="0">請選擇</option>
+        <option value="1" >性別</option>
+        <option value="2" >年齡別</option>
+        <option value="3" >教育程度別</option>
+        <option value="4" >年齡及教育程度別</option>
+        <option value="5" >產業別</option>
+    </select>
+    
+    <select name="gender" id="" v-model="this.checked4" @change = "this.createlabel()" v-if="this.firstChoose4 ==1">
+        <option value="0">性別</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
+    </select>
+    <select name="age" id="" v-model="this.checked4" @change = "this.createlabel()" v-if="this.firstChoose4 ==2">
+        <option value="0">年齡別</option>
         <option value="3">{{ this.Title1[2] }}</option>
         <option value="4">{{ this.Title1[3] }}</option>
         <option value="5">{{ this.Title1[4] }}</option>
         <option value="6">{{ this.Title1[5] }}</option>
         <option value="7">{{ this.Title1[6] }}</option>
         <option value="8">{{ this.Title1[7] }}</option>
+    </select>
+    <select name="education" id="" v-model="this.checked4" @change = "this.createlabel()" v-if="this.firstChoose4 ==3">
+        <option value="0">教育程度別</option>
         <option value="9">{{ this.Title1[8] }}</option>
         <option value="10">{{ this.Title1[9] }}</option>
         <option value="11">{{ this.Title1[10] }}</option>
         <option value="12">{{ this.Title1[11] }}</option>
+    </select>
+    <select name="ageedu" id="" v-model="this.checked4" @change = "this.createlabel()" v-if="this.firstChoose4 ==4">
+        <option value="0">年齡及教育程度別</option>
         <option value="13">{{ this.Title1[12] }}</option>
         <option value="14">{{ this.Title1[13] }}</option>
         <option value="15">{{ this.Title1[14] }}</option>
@@ -403,6 +490,9 @@ export default {
         <option value="34">{{ this.Title1[33] }}</option>
         <option value="35">{{ this.Title1[34] }}</option>
         <option value="36">{{ this.Title1[35] }}</option>
+    </select>
+    <select name="industry" id="" v-model="this.checked4" @change = "this.createlabel()" v-if="this.firstChoose4 ==5">
+        <option value="0">產業別</option>
         <option value="37">{{ this.Title1[36] }}</option>
         <option value="38">{{ this.Title1[37] }}</option>
         <option value="39">{{ this.Title1[38] }}</option>
@@ -425,20 +515,38 @@ export default {
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
-    <select name="" id="" v-model="this.checked5" @change = "this.createlabel()">
-        <option value="">請選擇</option>
+    <select name="firstchoose" id="" v-model="firstChoose5">
+        <option value="0">請選擇</option>
+        <option value="1" >性別</option>
+        <option value="2" >年齡別</option>
+        <option value="3" >教育程度別</option>
+        <option value="4" >年齡及教育程度別</option>
+        <option value="5" >產業別</option>
+    </select>
+    
+    <select name="gender" id="" v-model="this.checked5" @change = "this.createlabel()" v-if="this.firstChoose5 ==1">
+        <option value="0">性別</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
+    </select>
+    <select name="age" id="" v-model="this.checked5" @change = "this.createlabel()" v-if="this.firstChoose5 ==2">
+        <option value="0">年齡別</option>
         <option value="3">{{ this.Title1[2] }}</option>
         <option value="4">{{ this.Title1[3] }}</option>
         <option value="5">{{ this.Title1[4] }}</option>
         <option value="6">{{ this.Title1[5] }}</option>
         <option value="7">{{ this.Title1[6] }}</option>
         <option value="8">{{ this.Title1[7] }}</option>
+    </select>
+    <select name="education" id="" v-model="this.checked5" @change = "this.createlabel()" v-if="this.firstChoose5 ==3">
+        <option value="0">教育程度別</option>
         <option value="9">{{ this.Title1[8] }}</option>
         <option value="10">{{ this.Title1[9] }}</option>
         <option value="11">{{ this.Title1[10] }}</option>
         <option value="12">{{ this.Title1[11] }}</option>
+    </select>
+    <select name="ageedu" id="" v-model="this.checked5" @change = "this.createlabel()" v-if="this.firstChoose5 ==4">
+        <option value="0">年齡及教育程度別</option>
         <option value="13">{{ this.Title1[12] }}</option>
         <option value="14">{{ this.Title1[13] }}</option>
         <option value="15">{{ this.Title1[14] }}</option>
@@ -463,6 +571,9 @@ export default {
         <option value="34">{{ this.Title1[33] }}</option>
         <option value="35">{{ this.Title1[34] }}</option>
         <option value="36">{{ this.Title1[35] }}</option>
+    </select>
+    <select name="industry" id="" v-model="this.checked5" @change = "this.createlabel()" v-if="this.firstChoose5 ==5">
+        <option value="0">產業別</option>
         <option value="37">{{ this.Title1[36] }}</option>
         <option value="38">{{ this.Title1[37] }}</option>
         <option value="39">{{ this.Title1[38] }}</option>
@@ -495,4 +606,6 @@ export default {
     </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+</style>
