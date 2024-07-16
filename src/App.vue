@@ -11,5 +11,8 @@ import Header from './components/Header.vue'
 </template> 
 
 <style scoped lang="scss">
+    template{
+
+    }
 </style>
 

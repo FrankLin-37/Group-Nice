@@ -1,4 +1,14 @@
 <script>
+import salChart from '../components/SalaryChart.vue'
+import incomecheck from '../components/IncomeAndHouse.vue'
+
+export default{
+    components: {
+        salChart,
+        incomecheck,
+    }
+}
+
 import location from '../stores/location';
 import { mapActions } from 'pinia';
 export default{
@@ -12,6 +22,8 @@ export default{
 </script>
 
 <template>
+    <salChart />
+    <incomecheck />
 <div class="firstArea">
     <div class="firstInput"></div>
     <div class="textArea"></div>
@@ -27,6 +39,7 @@ export default{
 </template>
 
 <style scoped lang="scss">
+
 
 .firstArea{
     width: 100%;
