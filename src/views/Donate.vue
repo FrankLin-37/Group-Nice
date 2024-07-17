@@ -26,6 +26,8 @@
     height: 9dvh;
     }
     .main{
+        width: 100dvw;
+        height: 91dvh;
         display: flex;
         justify-content: center;
         align-content: center;
