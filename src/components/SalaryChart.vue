@@ -627,7 +627,10 @@ export default {
             flex-direction: column;
         }
         select{
-        margin: 4%
+        margin: 4%;
+        }
+        option{
+            font-size: 25px;
         }
     }
 

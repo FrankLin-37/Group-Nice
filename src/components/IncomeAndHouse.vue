@@ -140,7 +140,7 @@ export default{
                 this.final = "你只需要5年是天選之人吧"
                 this.finalYear = 2
             }else if(this.needYear <=10){
-                this.final = "10年以內就買得起了喔太扯"
+                this.final = "10年以內能買也太扯"
                 this.finalYear = 3
             }else if(this.needYear <20){
                 this.final = "用不到20年太強了吧"
@@ -287,12 +287,13 @@ export default{
         </div>
         </div>
 
-        <div class="area">
+        <div class="area area1">
             <p>房價：</p>
             <h1>{{ this.housePrice }}</h1>
 
-            <p>薪資：</p>
+            <p>　薪資：</p>
             <h1>{{ this.income }}</h1>
+            <p>萬　</p>
 
             <p>需要：</p>
             <h1>{{ this.needYear }}</h1>
@@ -300,7 +301,7 @@ export default{
 
         </div>
 
-        <div class="area">
+        <div class="area area2">
             <div class="imageArea" v-if="this.needYear">
                 <img src="../assets/50over.png" alt="" id="" v-if="this.finalYear == 1" >
                 <img src="../assets/5over.png"  alt="" id="" v-if="this.finalYear == 2">
@@ -332,7 +333,7 @@ export default{
 
     .area{
         width: 70dvw;
-        height: 35%;
+        height: 50%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -343,17 +344,12 @@ export default{
         }
 
         select{
-            margin: 1%
+            margin: 1%;
         }
 
         .imgArea{
             display: flex;
             flex-wrap: wrap;
-
-            .img{
-            width: 20dvw;
-            height: 20dvh;
-            }
         }
 
         .textArea{
@@ -363,8 +359,28 @@ export default{
             align-content: center;
         }
     }
+    
+    img{
+        position: absolute;
+        left: 6%;
+        top: 37%;
+    }
 
     .smallOne{
         height: 15%;
     }
+
+    .area1{
+        height: 20%;
+    }
+
+    p{
+        font-size: 40px;
+        margin-top: 2%;
+    }
+
+    h1{
+        font-size: 80px;
+    }
+
 </style>
