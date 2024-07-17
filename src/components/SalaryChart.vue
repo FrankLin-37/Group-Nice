@@ -119,40 +119,88 @@ export default {
                 datasets: [{
                     label: this.Title1[this.checked1-1],
                     data: itemData1,
-                    borderColor: 'rgb(255,0,0)',
-                    backgroundColor: 'rgb(66,221,245)'
-                },
+                    borderColor: 'rgba(95, 15, 64, 1)',
+                    backgroundColor: 'rgba(95, 15, 64, 0.2)',
+                    pointStyle: 'circle',
+                    pointRadius: 5,
+                    pointHoverRadius: 15,
+
+                    },
                     {   
                         label: this.Title1[this.checked2-1],
                         data: itemData2,
-                        borderColor: 'rgb(0,25,25)',
-                        backgroundColor:'rgb(66,221,200)'
+                        borderColor: 'rgba(154, 3, 30)',
+                        backgroundColor:'rgb(154, 3, 30,0.2)',
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointHoverRadius: 15,
                     },
                     {   
                         label: this.Title1[this.checked3-1],
                         data: itemData3,
-                        borderColor: 'rgb(0,0,0)',
-                        backgroundColor:'rgb(66,10,245)'
+                        borderColor: 'rgb(251, 139, 36)',
+                        backgroundColor:'rgb(251, 139, 36, 0.2)',
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointHoverRadius: 15,
                     },
                     {   
                         label: this.Title1[this.checked4-1],
                         data: itemData4,
-                        borderColor: 'rgb(100,100,50)',
-                        backgroundColor:'rgb(66,2,25)'
+                        borderColor: 'rgb(227, 100, 20)',
+                        backgroundColor:'rgb(227, 100, 20, 0.2)',
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointHoverRadius: 15,
                     },
                     {   
                         label: this.Title1[this.checked5-1],
                         data: itemData5,
-                        borderColor: 'rgb(50,55,50)',
-                        backgroundColor:'rgb(6,21,25)'
+                        borderColor: 'rgb(15, 76, 92)',
+                        backgroundColor:'rgb(15, 76, 92,0.2)',
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointHoverRadius: 15,
                     }
                 ]
             };
 
-            const config = {
-                type: 'line',
-                data: data
-            };
+            const config={
+                        type:'line',
+                        data: data,
+                        options:{
+                            scales:{
+                                x:{
+                                    ticks:{
+                                        font:{
+                                            size:15
+                                        }
+                                    },
+                                    title:{
+                                        display:true,
+                                        text:"年份",
+                                        font:{
+                                            size:20
+                                        }
+                                    }
+                                },
+                                y:{
+                                    ticks:{
+                                        font:{
+                                            size:15
+                                        }
+                                    },
+                                    title:{
+                                        display:true,
+                                        text:"收入(萬)",
+                                        font:{
+                                            size:20
+                                        },
+                                    }
+                                },
+                            }
+                        },
+                    };
 
             var chart;
             if(this.reset == 0){
@@ -617,9 +665,19 @@ export default {
 
 <style scoped lang="scss">
 
+    * {
+    color: #728D9A;
+    background: #F1EFE5;
+    }
+
+    // canvas{
+    //     margin-top: 4%;
+    // }
+
     .area{
         width: 22dvw;
         margin-right: 2%;
+        margin-left: 2%;
 
         .block{
             display: flex;

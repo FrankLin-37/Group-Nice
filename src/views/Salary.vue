@@ -10,6 +10,8 @@ export default{
 </script>
 
 <template>
+    <div class="space"></div>
+    <div class="space2"></div>
     <div class="firstArea">
         <salChart />
     </div>
@@ -17,11 +19,27 @@ export default{
 
 <style scoped lang="scss">
 
+
+* {
+    color: #728D9A;
+    background: #F1EFE5;
+}
+
+.space{
+    width: 100%;
+    height: 9dvh;
+}
+
+.space2{
+    width: 100%;
+    height: 6dvh;
+}
+
 .firstArea{
     width: 100%;
     height: 100dvh;
-    border: 1.5px solid black;
     display: flex;
+
 
     .firstInput{
         width: 100%;
@@ -65,4 +83,6 @@ export default{
         border: 1.5px solid black;
     }
 }
+
+
 </style>

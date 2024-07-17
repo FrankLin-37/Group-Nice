@@ -312,7 +312,7 @@ export default{
                 <img src="../assets/50over.png" alt="" id="" v-if="this.finalYear == 7">
             </div>
             <div class="textArea">
-                <h1>{{ this.final }}</h1>
+                <h2>{{ this.final }}</h2>
             </div>
         </div>
     </div>
@@ -320,6 +320,11 @@ export default{
 </template>
 
 <style scoped lang="scss">
+
+    * {
+    color: #728D9A;
+    background: #F1EFE5;
+    }
 
     .main{
         width: 100%;
@@ -363,7 +368,7 @@ export default{
     img{
         position: absolute;
         left: 6%;
-        top: 37%;
+        top: 40%;
     }
 
     .smallOne{
@@ -380,6 +385,10 @@ export default{
     }
 
     h1{
+        font-size: 80px;
+    }
+
+    h2{
         font-size: 80px;
     }
 

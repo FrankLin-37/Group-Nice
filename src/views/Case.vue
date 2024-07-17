@@ -10,6 +10,7 @@ export default{
 </script>
 
 <template>
+    <div class="space"></div>
     <div class="firstArea">
         <incomecheck />
     </div>
@@ -18,10 +19,16 @@ export default{
 
 <style scoped lang="scss">
 
+
+
+.space{
+    width: 100%;
+    height: 9dvh;
+}
+
 .firstArea{
     width: 100%;
     height: 100dvh;
-    border: 1.5px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
