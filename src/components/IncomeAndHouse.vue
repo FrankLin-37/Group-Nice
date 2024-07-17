@@ -119,14 +119,16 @@ export default{
 
             this.needYear = Math.ceil(this.housePrice / this.income);
 
-            if(!this.needYear){
-                this.needYear =""
-            }
             if(!this.housePrice){
-                this.housePrice =""
+                this.housePrice = ""
             }
+
+            if(!this.needYear){
+                this.needYear = ""
+            }
+
             if(!this.income){
-                this.income =""
+                this.income = ""
             }
         },
     },
@@ -135,22 +137,11 @@ export default{
 
 <template>
 
-    <h1>{{ this.locationChecked }}</h1>
-    <select name="" id="" v-model="this.locationChecked" @change = "this.getresult()">
-        <option value="0">請選擇</option>
-        <option value="1">台北</option>
-        <option value="2">新北</option>
-        <option value="3">桃園</option>
-        <option value="4">新竹</option>
-        <option value="5">台中</option>
-        <option value="6">台南</option>
-        <option value="7">高雄</option>
-    </select>
-
-
-    <h1>{{ this.yearChecked }}</h1>
+<h1>{{ this.yearChecked }}</h1>
     <select name="" id="" v-model="this.yearChecked" @change = "this.getresult()">
-        <option value="0">請選擇</option>
+        <option value="0">年份</option>
+        <option :value="item" v-for="item in yearset.length">{{ this.yearset[item-1] }}</option>
+<!-- 
         <option value="1">{{ this.yearset[0] }}</option>
         <option value="2">{{ this.yearset[1] }}</option>
         <option value="3">{{ this.yearset[2] }}</option>
@@ -168,12 +159,24 @@ export default{
         <option value="15">{{ this.yearset[14] }}</option>
         <option value="16">{{ this.yearset[15] }}</option>
         <option value="17">{{ this.yearset[16] }}</option>
-        <option value="18">{{ this.yearset[17] }}</option>
+        <option value="18">{{ this.yearset[17] }}</option> -->
+    </select>
+
+    <h1>{{ this.locationChecked }}</h1>
+    <select name="" id="" v-model="this.locationChecked" @change = "this.getresult()">
+        <option value="0">地區</option>
+        <option value="1">台北</option>
+        <option value="2">新北</option>
+        <option value="3">桃園</option>
+        <option value="4">新竹</option>
+        <option value="5">台中</option>
+        <option value="6">台南</option>
+        <option value="7">高雄</option>
     </select>
 
     <h1>{{this.firstChoose}}</h1>
     <select name="firstchoose" id="" v-model="firstChoose">
-        <option value="0">請選擇</option>
+        <option value="0">類別</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
         <option value="3" >教育程度別</option>
@@ -255,12 +258,11 @@ export default{
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
+    <p>房價：</p>
+    <h1>{{ this.housePrice }}</h1>
 
     <p>薪資：</p>
     <h1>{{ this.income }}</h1>
-
-    <p>房價：</p>
-    <h1>{{ this.housePrice }}</h1>
 
     <p>需要：</p>
     <h1>{{ this.needYear }}</h1>
