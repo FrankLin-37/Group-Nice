@@ -21,6 +21,7 @@ export default{
     width: 100%;
     height: 100dvh;
     border: 1.5px solid black;
+    display: flex;
 
     .firstInput{
         width: 100%;
