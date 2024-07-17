@@ -19,7 +19,7 @@ export default{
 </template>
 
 <style scoped lang="scss">
-.headerArea{    
+
 .headerArea{    
     width: 100%;
     height: 9dvh;
