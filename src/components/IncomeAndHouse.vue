@@ -85,6 +85,8 @@ export default{
             needYear:0,
             firstChoose:0,
             locationChecked:0,
+            final:"",
+            finalYear:0,
         }
     },
     created() {
@@ -130,6 +132,29 @@ export default{
             if(!this.income){
                 this.income = ""
             }
+
+            if(this.needYear >=50){
+                this.final = "夭壽喔這不是人辦的到的吧"
+                this.finalYear = 1
+            }else if(this.needYear <=5){
+                this.final = "你只需要5年是天選之人吧"
+                this.finalYear = 2
+            }else if(this.needYear <=10){
+                this.final = "10年以內就買得起了喔太扯"
+                this.finalYear = 3
+            }else if(this.needYear <20){
+                this.final = "用不到20年太強了吧"
+                this.finalYear = 4
+            }else if(this.needYear <=30){
+                this.final = "還能活30年就能搞定"
+                this.finalYear = 5
+            }else if(this.needYear <=40){
+                this.final = "30幾年我覺得可以考慮轉職啦"
+                this.finalYear = 6
+            }else if(this.needYear <50){
+                this.final = "要花40幾年還不轉職阿"
+                this.finalYear = 7
+            }
         },
     },
 }
@@ -137,7 +162,9 @@ export default{
 
 <template>
 
-<h1>{{ this.yearChecked }}</h1>
+    <div class="main">
+        <div class="area smallOne">
+        <div class="block">
     <select name="" id="" v-model="this.yearChecked" @change = "this.getresult()">
         <option value="0">年份</option>
         <option :value="item" v-for="item in yearset.length">{{ this.yearset[item-1] }}</option>
@@ -161,31 +188,30 @@ export default{
         <option value="17">{{ this.yearset[16] }}</option>
         <option value="18">{{ this.yearset[17] }}</option> -->
     </select>
-
-    <h1>{{ this.locationChecked }}</h1>
-    <select name="" id="" v-model="this.locationChecked" @change = "this.getresult()">
-        <option value="0">地區</option>
-        <option value="1">台北</option>
-        <option value="2">新北</option>
-        <option value="3">桃園</option>
-        <option value="4">新竹</option>
-        <option value="5">台中</option>
-        <option value="6">台南</option>
-        <option value="7">高雄</option>
-    </select>
-
-    <h1>{{this.firstChoose}}</h1>
-    <select name="firstchoose" id="" v-model="firstChoose">
-        <option value="0">類別</option>
-        <option value="1" >性別</option>
-        <option value="2" >年齡別</option>
-        <option value="3" >教育程度別</option>
-        <option value="4" >年齡及教育程度別</option>
-        <option value="5" >產業別</option>
-    </select>
-
-    <h1>{{ this.salChecked }}</h1>
-
+        </div>
+        <div class="block">
+            <!-- <h1>{{ this.locationChecked }}</h1> -->
+            <select name="" id="" v-model="this.locationChecked" @change = "this.getresult()">
+            <option value="0">地區</option>
+            <option value="1">台北</option>
+            <option value="2">新北</option>
+            <option value="3">桃園</option>
+            <option value="4">新竹</option>
+            <option value="5">台中</option>
+            <option value="6">台南</option>
+            <option value="7">高雄</option>
+            </select>
+        </div>
+        <div class="block">
+            <select name="firstchoose" id="" v-model="firstChoose">
+            <option value="0">類別</option>
+            <option value="1" >性別</option>
+            <option value="2" >年齡別</option>
+            <option value="3" >教育程度別</option>
+            <option value="4" >年齡及教育程度別</option>
+            <option value="5" >產業別</option>
+            </select>
+            
     <select name="gender" id="" v-model="this.salChecked" @change = "this.getresult()" v-if="this.firstChoose ==1">
         <option value="0">性別</option>
         <option value="1">{{ this.Title1[0] }}</option>
@@ -258,17 +284,87 @@ export default{
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
 
-    <p>房價：</p>
-    <h1>{{ this.housePrice }}</h1>
+        </div>
+        </div>
 
-    <p>薪資：</p>
-    <h1>{{ this.income }}</h1>
+        <div class="area">
+            <p>房價：</p>
+            <h1>{{ this.housePrice }}</h1>
 
-    <p>需要：</p>
-    <h1>{{ this.needYear }}</h1>
-    <p>年</p>
+            <p>薪資：</p>
+            <h1>{{ this.income }}</h1>
+
+            <p>需要：</p>
+            <h1>{{ this.needYear }}</h1>
+            <p>年</p>
+
+        </div>
+
+        <div class="area">
+            <div class="imageArea" v-if="this.needYear">
+                <img src="../assets/50over.png" alt="" id="" v-if="this.finalYear == 1" >
+                <img src="../assets/5over.png"  alt="" id="" v-if="this.finalYear == 2">
+                <img src="../assets/10over.png" alt="" id="" v-if="this.finalYear == 3">
+                <img src="../assets/20over.png" alt="" id="" v-if="this.finalYear == 4">
+                <img src="../assets/30over.png" alt="" id="" v-if="this.finalYear == 5">
+                <img src="../assets/40over.png" alt="" id="" v-if="this.finalYear == 6">
+                <img src="../assets/50over.png" alt="" id="" v-if="this.finalYear == 7">
+            </div>
+            <div class="textArea">
+                <h1>{{ this.final }}</h1>
+            </div>
+        </div>
+    </div>
+
 </template>
 
 <style scoped lang="scss">
 
+    .main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-content: start;
+    }
+
+    .area{
+        width: 70dvw;
+        height: 35%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: center;
+
+        .block{
+            width: 33%;
+        }
+
+        select{
+            margin: 1%
+        }
+
+        .imgArea{
+            display: flex;
+            flex-wrap: wrap;
+
+            .img{
+            width: 20dvw;
+            height: 20dvh;
+            }
+        }
+
+        .textArea{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+    }
+
+    .smallOne{
+        height: 15%;
+    }
 </style>

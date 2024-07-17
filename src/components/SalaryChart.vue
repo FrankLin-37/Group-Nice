@@ -191,7 +191,9 @@ export default {
 <template>
     <!-- <button @click="Tester()">Btn</button> -->
 
-    <select name="firstchoose" id="" v-model="firstChoose1">
+    <div class="area">
+        <div class="block">
+        <select name="firstchoose" id="" v-model="firstChoose1">
         <option value="0">請選擇</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
@@ -271,8 +273,9 @@ export default {
         <option value="55">{{ this.Title1[54] }}</option>
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
-
-    <select name="firstchoose" id="" v-model="firstChoose2">
+        </div>
+        <div class="block">
+        <select name="firstchoose" id="" v-model="firstChoose2">
         <option value="0">請選擇</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
@@ -352,8 +355,9 @@ export default {
         <option value="55">{{ this.Title1[54] }}</option>
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
-
-    <select name="firstchoose" id="" v-model="firstChoose3">
+        </div>
+        <div class="block">
+        <select name="firstchoose" id="" v-model="firstChoose3">
         <option value="0">請選擇</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
@@ -433,8 +437,9 @@ export default {
         <option value="55">{{ this.Title1[54] }}</option>
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
-
-    <select name="firstchoose" id="" v-model="firstChoose4">
+        </div>
+        <div class="block">
+        <select name="firstchoose" id="" v-model="firstChoose4">
         <option value="0">請選擇</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
@@ -442,8 +447,7 @@ export default {
         <option value="4" >年齡及教育程度別</option>
         <option value="5" >產業別</option>
     </select>
-    
-    <select name="gender" id="" v-model="this.checked4" @change = "this.createlabel()" v-if="this.firstChoose4 ==1">
+        <select name="gender" id="" v-model="this.checked4" @change = "this.createlabel()" v-if="this.firstChoose4 ==1">
         <option value="0">性別</option>
         <option value="1">{{ this.Title1[0] }}</option>
         <option value="2">{{ this.Title1[1] }}</option>
@@ -514,7 +518,9 @@ export default {
         <option value="55">{{ this.Title1[54] }}</option>
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
-
+        </div>
+        <div class="block">
+        
     <select name="firstchoose" id="" v-model="firstChoose5">
         <option value="0">請選擇</option>
         <option value="1" >性別</option>
@@ -595,17 +601,34 @@ export default {
         <option value="55">{{ this.Title1[54] }}</option>
         <option value="56">{{ this.Title1[55] }}</option>
     </select>
+        </div>
+    </div>
 
-    <h1>{{ this.checked1 }}</h1>
+
+    <!-- <h1>{{ this.checked1 }}</h1>
     <h1>{{ this.checked2 }}</h1>
     <h1>{{ this.checked3 }}</h1>
     <h1>{{ this.checked4 }}</h1>
-    <h1>{{ this.checked5 }}</h1>
-    <div style="width:900px; height:400px;" id="container">
+    <h1>{{ this.checked5 }}</h1> -->
+    <div style="width:70dvw; height:75dvh;" id="container">
         <canvas id="myChart" ></canvas>
     </div>
 </template>
 
 <style scoped lang="scss">
+
+    .area{
+        width: 22dvw;
+        margin-right: 2%;
+
+        .block{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        select{
+        margin: 4%
+        }
+    }
 
 </style>
