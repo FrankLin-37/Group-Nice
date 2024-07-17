@@ -2,6 +2,7 @@
 export default{
     data(){
         return{
+            years:['2013', '2014', '2015', '2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026','2027','2028','2029','2030'],
             cityPrice:{"PreOwned":{
                                 "taipei": [16200000, 16680000, 16800000, 16000000, 16600000, 17170000, 18200000, 18900000, 19200000, 18800000, 18880000, 19574363, 19906000, 20237636, 20569272, 20900909, 21232545,21564181],
                                 "newtaipei": [9800000, 10350000, 10120000, 10000000, 10160000, 10580000, 11050000, 11400000, 11900000, 11800000, 12080000,12270727, 12509181, 12747636, 12986090, 13224545, 13463000,13701454],
@@ -24,23 +25,41 @@ export default{
                     "kaohsiung":"高雄市"      
                 },
 
+                // borderColor:[
+                //     'rgba(249, 65, 68,1)',
+                //     'rgba(243, 114, 44,1)',
+                //     'rgba(248, 150, 30,1)',
+                //     'rgba(249, 199, 79,1)',
+                //     'rgba(144, 190, 109,1)',
+                //     'rgba(67, 170, 139,1)',
+                //     'rgba(87, 117, 144,1)',
+                // ],
+                // backgroundColor:[
+                //     'rgba(249, 65, 68,0.2)',
+                //     'rgba(243, 114, 44,0.2)',
+                //     'rgba(248, 150, 30,0.2)',
+                //     'rgba(249, 199, 79,0.2)',
+                //     'rgba(144, 190, 109,0.2)',
+                //     'rgba(67, 170, 139,0.2)',
+                //     'rgba(87, 117, 144,0.2)',
+                // ],
                 borderColor:[
+                    'rgba(95, 15, 64,1)',
+                    'rgba(154, 3, 30,1)',
+                    'rgba(251, 139, 36,1)',
+                    'rgba(227, 100, 20,1)',
+                    'rgba(15, 76, 92,1)',
                     'rgba(249, 65, 68,1)',
-                    'rgba(243, 114, 44,1)',
-                    'rgba(248, 150, 30,1)',
-                    'rgba(249, 199, 79,1)',
-                    'rgba(144, 190, 109,1)',
-                    'rgba(67, 170, 139,1)',
-                    'rgba(87, 117, 144,1)',
+                    'rgba(42, 157, 143,1)',
                 ],
                 backgroundColor:[
+                    'rgba(95, 15, 64,0.2)',
+                    'rgba(154, 3, 30,0.2)',
+                    'rgba(251, 139, 36,0.2)',
+                    'rgba(227, 100, 20,0.2)',
+                    'rgba(15, 76, 92,0.2)',
                     'rgba(249, 65, 68,0.2)',
-                    'rgba(243, 114, 44,0.2)',
-                    'rgba(248, 150, 30,0.2)',
-                    'rgba(249, 199, 79,0.2)',
-                    'rgba(144, 190, 109,0.2)',
-                    'rgba(67, 170, 139,0.2)',
-                    'rgba(87, 117, 144,0.2)',
+                    'rgba(42, 157, 143,0.2)',
                 ],
 
 
@@ -81,7 +100,7 @@ export default{
                         pointHoverRadius:15
                     }
 
-
+                    const dash = (ctx, value)=> ctx.p0DataIndex > labels.indexOf('2022') ? value:[6,0];
                     const data = {
                         labels:labels,
                         datasets: [{
@@ -92,7 +111,10 @@ export default{
                             pointStyle:style.pointStyle,
                             pointRadius:style.pointRadius,
                             pointHoverRadius:style.pointHoverRadius,
-                           
+                            tension:0.4,
+                            segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                         },
                         {   
                             label: cityNameCh[1],
@@ -102,7 +124,10 @@ export default{
                             pointStyle:style.pointStyle,
                             pointRadius:style.pointRadius,
                             pointHoverRadius:style.pointHoverRadius,
-
+                            tension:0.4,
+                            segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                         },
                         {   
                             label: cityNameCh[2],
@@ -112,7 +137,10 @@ export default{
                             pointStyle:style.pointStyle,
                             pointRadius:style.pointRadius,
                             pointHoverRadius:style.pointHoverRadius,
-
+                            tension:0.4,
+                            segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                         },
                         {   
                             label: cityNameCh[3],
@@ -122,7 +150,10 @@ export default{
                             pointStyle:style.pointStyle,
                             pointRadius:style.pointRadius,
                             pointHoverRadius:style.pointHoverRadius,
-
+                            tension:0.4,
+                            segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                         },
                         {   
                             label: cityNameCh[4],
@@ -132,7 +163,10 @@ export default{
                             pointStyle:style.pointStyle,
                             pointRadius:style.pointRadius,
                             pointHoverRadius:style.pointHoverRadius,
-
+                            tension:0.4,
+                            segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                         },
                         {   
                             label: cityNameCh[5],
@@ -142,7 +176,10 @@ export default{
                             pointStyle:style.pointStyle,
                             pointRadius:style.pointRadius,
                             pointHoverRadius:style.pointHoverRadius,
-
+                            tension:0.4,
+                            segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                         },
                         {   
                             label: cityNameCh[6],
@@ -152,7 +189,10 @@ export default{
                             pointStyle:style.pointStyle,
                             pointRadius:style.pointRadius,
                             pointHoverRadius:style.pointHoverRadius,
-
+                            tension:0.4,
+                            segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                         }
 
                         ]    
@@ -185,7 +225,7 @@ export default{
                                     },
                                     title:{
                                         display:true,
-                                        text:"收入(萬)",
+                                        text:"房價(萬)",
                                         font:{
                                             size:20
                                         },
@@ -226,6 +266,23 @@ export default{
                 this.chartInstance.update();
             },
 
+                transCityname(city){
+                    const cityNames = {
+                        taipei: '台北市',
+                        newtaipei: '新北市',
+                        taoyuan: '桃園市',
+                        hsinchu: '新竹市',
+                        taichung: '台中市',
+                        tainan: '台南市',
+                        kaohsiung: '高雄市'
+                    };
+                    return cityNames[city] || city
+                },
+
+                transNumberUnit(number){
+                    return parseInt(number/10000)
+                }
+
 
         },
 
@@ -239,8 +296,13 @@ export default{
 
 <template>
     <div class="chartOuter">
+
+        <div class="upImage">
+            <img src="../assets/peko/houseUp.png" alt="">
+        </div>
+
         <div class="chartArea">
-            <h1>七都房價10年趨勢圖</h1>
+            <h1>七都房價十年趨勢圖</h1>
             <canvas id = "myChart"></canvas>
         </div>
         
@@ -281,7 +343,29 @@ export default{
                 value="6"  checked="" v-on:change="updateChart($event)">
                 <label for="kaohsiung">高雄市</label>
             </div>
-        </div>
+
+            <div class="circle">
+
+            </div>
+    </div>
+
+    <div class="tableArea">
+        <table border="3">
+        <thead>
+            <tr>
+            <th>縣市\年份</th>
+            <th v-for="year in years" :key="year">{{ year }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(values, city) in cityPrice.PreOwned" :key="city">
+            <td>{{ transCityname(city) }}</td>
+            <td v-for="value in values" :key="value">{{ transNumberUnit(value) }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
     </div>
 </template>
 
@@ -291,32 +375,109 @@ export default{
  margin: 0;
  padding: 0;
  box-sizing: border-box;   
- background-color: #e5e5f7;
+//  background-color: #e5e5f7;
+background-color:#F1EFE5;
 // font-family: "Shippori Mincho", serif;
 font-family: "Zen Old Mincho", serif;
 // font-weight: 200;
 // font-style: normal;
 }
+
 .chartOuter{
 
     width: 100dvw;
     height: 100dvh;
-    .chartArea{
 
-        width: 80%;
+    .chartArea{
+        width: 90%;
         height: 80%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: 10%;
+        padding-top: 2%;  
+        padding-right: 10%;
         opacity: 1;
+        z-index: 99;
+
+            h1{
+            padding-left: 10%;
+            font-size: 55px;
+            writing-mode: vertical-lr ;
+            }
+            #myChart{
+                margin-top: 5%;
+                padding-left: 5%;
+            }
+            
     }
     .checkboxArea{
         width: 100%;
-        height: 100%;
+        height: 100px;
         display: flex;
-        // align-items: center;
-        justify-content: center;
+        align-items: center;
+        justify-content: left;
+        padding-left: 20%;
+        margin-bottom: 5%;
+    }
+
+
+
+    .houseImage{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        overflow: hidden;
+        left: 10%;
+        top:10%;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .upImage{
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        overflow: hidden;
+        right: 0;
+        top:55%;
+        background-color: transparent;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .circle{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(232, 157, 59);
+        border-radius: 50%;
+        right:10%;
+        bottom: 10%;
+        opacity: 0.5;
+    }
+
+
+}
+
+.tableArea{
+    width: 100dvw;
+    height: 80dvh;
+    background-color: #F8C3CD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-spacing:0;
+    
+    th{
+        background-color: #e293a2;
+    }
+    
+    th,td{
+        padding: 10px
     }
 
 }
