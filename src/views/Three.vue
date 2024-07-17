@@ -11,6 +11,12 @@
 </template>
 
 <style scoped lang="scss">
+    *{
+    // font-family: "Zen Old Mincho", serif;
+    // font-family: "Shippori Mincho", serif;
+    font-family: "Kiwi Maru", serif;
+    }
+    
     .main{
         display: flex;
         justify-content: center;
