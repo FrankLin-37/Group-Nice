@@ -231,6 +231,15 @@ export default{
                                         },
                                     }
                                 },
+                            },
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        font: {
+                                            size: 20  // 图例标签字体大小
+                                        }
+                                    }
+                                }
                             }
                         },
                     };
