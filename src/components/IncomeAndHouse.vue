@@ -87,6 +87,8 @@ export default{
             locationChecked:0,
             final:"",
             finalYear:0,
+            case1:0,
+            case2:0,
         }
     },
     created() {
@@ -146,7 +148,7 @@ export default{
                 this.final = "不到20年太強了吧！"
                 this.finalYear = 4
             }else if(this.needYear <=30){
-                this.final = "再活30年就能搞定！"
+                this.final = "再30年一定能搞定！"
                 this.finalYear = 5
             }else if(this.needYear <=40){
                 this.final = "該考慮轉職了啦！"
@@ -315,6 +317,50 @@ export default{
                 <h2>{{ this.final }}</h2>
             </div>
         </div>
+
+        <div class="caseArea">
+            <div class="casefirst" @click="this.case1 = 1">
+                <button class="case1btn">案例1</button>
+                <div class="caseinner1">
+                    <img src="../assets/neetstage.png" alt="" v-if="this.case1 == 0">
+                    <div class="caseText"> 
+                        <p v-if="this.case1 == 0">王小明（Before）</p>
+                        <p v-if="this.case1 == 0">29歲（2015）</p>
+                        <p v-if="this.case1 == 0">高中畢業</p>
+                        <p v-if="this.case1 == 0">台南市</p>
+                    </div>
+                    <div class="caseText">
+                        <p v-if="this.case1 == 1">王小明（After）</p>
+                        <p v-if="this.case1 == 1">35歲（2023）</p>
+                        <p v-if="this.case1 == 1">研究所畢業</p>
+                        <p v-if="this.case1 == 1">台北市</p>
+                    </div>
+                    <img src="../assets/ishikistage.png" alt="" v-if="this.case1 == 1">
+                </div>
+            </div>
+            <div class="casesec" @click="this.case2 = 1">
+                <button class="case2btn">案例2</button>
+                <div class="caseinner2">
+                    <img src="../assets/mitsuha17.jpg" alt="" v-if="this.case2 == 0">
+                    <div class="caseText"> 
+                        <p v-if="this.case2 == 0">Mitsuha（Before）</p>
+                        <p v-if="this.case2 == 0">17歲（2013）</p>
+                        <p v-if="this.case2 == 0">新竹市</p>
+                        <p v-if="this.case2 == 0">醫療保健及社會工作服務業</p>
+                        <p v-if="this.case2 == 0">宗教助理專業人員</p>
+                    </div>
+                    <div class="caseText">
+                        <p v-if="this.case2 == 1">Mitsuha（After）</p>
+                        <p v-if="this.case2 == 1">25歲（2021）</p>
+                        <p v-if="this.case2 == 1">台北市</p>
+                        <p v-if="this.case2 == 1">專業科學及技術服務業</p>
+                        <p v-if="this.case2 == 1">服飾設計師</p>
+                    </div>
+                    <img src="../assets/mitsuha25.jpg" alt="" v-if="this.case2 == 1">
+                </div>
+            </div>
+        </div>
+    
     </div>
 
 </template>
@@ -335,6 +381,114 @@ export default{
         flex-direction: row;
         justify-content: center;
         align-content: start;
+    }
+    
+    .casefirst{
+        position: fixed;
+        right: 10%;
+
+        .case1btn{
+            width: 26px;
+            height: 80px;
+            position: fixed;
+            right: 5%;
+            top: 20%;
+        }
+
+        .caseinner1{
+            display: none;
+        }
+
+        &:hover{
+            .caseinner1{
+                background-color: rgb(250, 237, 205);
+                display: block;
+                width: 70dvw;
+                height: 65dvh;
+                position: fixed;
+                left: 15%;
+                top: 20%;
+                border-radius: 5%;
+
+                img{
+                    background: none;
+                    width: 40dvw;
+                    height: 65dvh;
+                    position: fixed;
+                    left: 43%;
+                    top: 20%;
+                }
+
+                .caseText{
+
+                    p{
+                        background: none;
+                        color: black;
+                    }
+
+                    background: none;
+                    width: 50dvw;
+                    height: 50dvh;
+                    position: fixed;
+                    left: 16.5%;
+                    top: 25%;
+                }
+            }
+        }
+    }
+    
+    .casesec{
+        position: fixed;
+        right: 10%;
+
+        .case2btn{
+            width: 26px;
+            height: 80px;
+            position: fixed;
+            right: 5%;
+            top: 32%;
+        }
+
+        .caseinner2{
+            display: none;
+        }
+
+        &:hover{
+            .caseinner2{
+                background-color: rgb(250, 237, 205);
+                display: block;
+                width: 70dvw;
+                height: 65dvh;
+                position: fixed;
+                left: 15%;
+                top: 20%;
+                border-radius: 5%;
+
+                img{
+                    background: none;
+                    width: 27dvw;
+                    height: 65dvh;
+                    position: fixed;
+                    left: 50%;
+                    top: 20%;
+                }
+
+                .caseText{
+
+                    p{
+                        background: none;
+                        color: black;
+                    }
+
+                    background: none;
+                    width: 50dvw;
+                    height: 50dvh;
+                    position: fixed;
+                    left: 16.5%;
+                    top: 25%;
+                }
+            }
+        }
     }
 
     .area{

@@ -196,6 +196,15 @@ export default {
                                         },
                                     }
                                 },
+                            },
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        font: {
+                                            size: 20 // 設置圖例標籤字體大小
+                                        }
+                                    }
+                                }
                             }
                         },
                     };
