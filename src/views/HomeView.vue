@@ -106,6 +106,71 @@ jQuery(document).ready(function() {
 </template>
 
 <style scoped lang="scss">
+.back-videos{
+    width: 100%;
+    height: 100dvh;
+    border: 1.5px solid black;
+    .videos{
+        opacity: 0.8;
+        z-index: -1;
+    }
+}
+.headerBox{
+    width: 100%;
+    height: 90dvh;
+}
+.cityImg{
+    width: 100%;
+    height: 60dvh;
+    background-color: #F6F4EB;
+    display: flex;
+    .imgP1{
+        width: 50%;
+        height: 60dvb;
+        background-image: url(../assets/Kaohsiung.jpg);
+        border-radius: 20px;
+        margin-left: 2%;
+    }
+    .textP1{
+        width: 50%;
+        height: 60dvh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+.longText{
+    width: 100%;
+    height: 110dvh;
+    padding-top: 8%;    
+    background-color: #F6F4EB;
+    button{
+        width: 100%;
+        height: 100px;
+        background-color: #F6F4EB;
+        border: 0.5px solid black;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+
+    }
+    .textBox{
+        width: 100%;
+        height: 12dvb;
+        display: flex;
+        border-bottom: 1.5px solid black;
+        justify-content: space-around;
+        align-items: flex-end;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }.cityName{
+        font-size: 38px;
+    }
+}
+.footerBox{
+    width: 100%;
+    height: 90dvh;
+    border: 1.5px solid black;
+    background-color: #F6F4EB;
+}
     *{
         font-family: "Zen Old Mincho", serif;
     }
