@@ -84,9 +84,7 @@ export default {
 
     // 自訂方法格式:
     methods: {
-        Tester() {
 
-        },
         createlabel(){
             
             let labels = ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028','2029', '2030']
@@ -241,8 +239,8 @@ export default {
 
     <div class="area">
         <div class="block">
-        <select name="firstchoose" id="" v-model="firstChoose1">
-        <option value="0">請選擇</option>
+        <select name="firstchoose" id="" v-model="firstChoose1" @change = "this.createlabel()">
+        <option value="0" >請選擇</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
         <option value="3" >教育程度別</option>
@@ -323,7 +321,7 @@ export default {
     </select>
         </div>
         <div class="block">
-        <select name="firstchoose" id="" v-model="firstChoose2">
+        <select name="firstchoose" id="" v-model="firstChoose2" @change = "this.createlabel()">
         <option value="0">請選擇</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
@@ -405,7 +403,7 @@ export default {
     </select>
         </div>
         <div class="block">
-        <select name="firstchoose" id="" v-model="firstChoose3">
+        <select name="firstchoose" id="" v-model="firstChoose3" @change = "this.createlabel()">
         <option value="0">請選擇</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
@@ -487,7 +485,7 @@ export default {
     </select>
         </div>
         <div class="block">
-        <select name="firstchoose" id="" v-model="firstChoose4">
+        <select name="firstchoose" id="" v-model="firstChoose4" @change = "this.createlabel()">
         <option value="0">請選擇</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
@@ -569,7 +567,7 @@ export default {
         </div>
         <div class="block">
         
-    <select name="firstchoose" id="" v-model="firstChoose5">
+    <select name="firstchoose" id="" v-model="firstChoose5" @change = "this.createlabel()">
         <option value="0">請選擇</option>
         <option value="1" >性別</option>
         <option value="2" >年齡別</option>
@@ -668,6 +666,7 @@ export default {
     * {
     color: #728D9A;
     background: #F1EFE5;
+    font-family: "Zen Old Mincho", serif;
     }
 
     // canvas{
@@ -686,6 +685,7 @@ export default {
         }
         select{
         margin: 4%;
+        // font-size: 25px;
         }
         option{
             font-size: 25px;

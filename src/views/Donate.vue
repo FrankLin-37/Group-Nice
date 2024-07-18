@@ -28,8 +28,8 @@ export default{
     background: #F1EFE5;
     // font-family: "Zen Old Mincho", serif;
     // font-family: "Shippori Mincho", serif;
-    font-family: "Kiwi Maru", serif;
-    
+    // font-family: "Kiwi Maru", serif;
+    font-family: "Zen Old Mincho", serif;
     }
     
     .space{
@@ -46,7 +46,8 @@ export default{
         flex-wrap: wrap;
         
         h1{
-            margin-left: 3.5%;
+            margin-left: 0.5%;
+            font-size: 3.5rem;
         }
     }
 </style>
