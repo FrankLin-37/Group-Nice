@@ -381,7 +381,7 @@ export default {
    }
    .maptext{
       width: 50%;
-      height: 113%;
+      height: 125%;
       display: flex;
       justify-content: center;
       align-items: center;
