@@ -9,7 +9,7 @@ export default{
 
 <template>
         <div class="headerArea">
-    <RouterLink class="routeItem" to="/">One</RouterLink>
+    <RouterLink class="routeItem" to="/">Home</RouterLink>
     <RouterLink class="routeItem" to="/Salary">薪資中位數</RouterLink>
     <RouterLink class="routeItem" to="/Case">案例</RouterLink>
     <RouterLink class="routeItem" to="/Donate">贊助我們</RouterLink>
