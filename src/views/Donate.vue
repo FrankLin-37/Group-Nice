@@ -16,6 +16,8 @@ export default{
     <div class="main">
         <h1>如果喜歡請贊助我們</h1>
         <img src="../assets/pay-nobg.png" alt="Qcode">
+        <img src="../assets/peko/乳牛走路.gif" alt="乳牛走路">
+
     </div>
 
 </template>

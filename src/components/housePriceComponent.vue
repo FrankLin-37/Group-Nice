@@ -281,10 +281,42 @@ export default{
 
                 transNumberUnit(number){
                     return parseInt(number/10000)
+                },
+                upRate(x, y){
+                    let uprate = (y-x)/x*100
+                    return (uprate).toFixed(2)+'%'
+                },
+                callPrice_CityYear(city,year){
+                    if (city == 'taipei'){
+                        var output = this.cityPrice.PreOwned.taipei[this.years.indexOf(year)]
+                    }
+                    if (city == 'newtaipei'){
+                        var output = this.cityPrice.PreOwned.newtaipei[this.years.indexOf(year)]
+                    }
+                    if (city == 'taoyuan'){
+                        var output = this.cityPrice.PreOwned.taoyuan[this.years.indexOf(year)]
+                    }
+                    if (city == 'hsinchu'){
+                        var output = this.cityPrice.PreOwned.hsinchu[this.years.indexOf(year)]
+                    }
+                    if (city == 'taichung'){
+                        var output = this.cityPrice.PreOwned.taichung[this.years.indexOf(year)]
+                    }
+                    if (city == 'tainan'){
+                        var output = this.cityPrice.PreOwned.tainan[this.years.indexOf(year)]
+                    }
+                    if (city == 'kaohsiung'){
+                        var output = this.cityPrice.PreOwned.kaohsiung[this.years.indexOf(year)]
+                    }
+                    
+                    return output/10000
                 }
 
 
         },
+    computed:{
+
+    }, 
 
     mounted(){
         this.taiwanChart()
@@ -295,6 +327,9 @@ export default{
 
 
 <template>
+    <div class="top">
+
+    </div>
     <div class="chartOuter">
 
         <div class="upImage">
@@ -349,7 +384,7 @@ export default{
             </div>
     </div>
 
-    <div class="tableArea">
+    <!-- <div class="tableArea">
         <table border="3">
         <thead>
             <tr>
@@ -364,6 +399,71 @@ export default{
             </tr>
         </tbody>
         </table>
+    </div> -->
+    <div class="tableArea">
+        <h1>十年間七都房價上漲幅度</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>都會區</th>
+                    <th>2013年</th>
+                    <th>2019年</th>
+                    <th>2023年</th>
+                    <th>十年漲幅</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>台北市</td>
+                    <td>{{callPrice_CityYear('taipei','2013')}}</td>
+                    <td>{{callPrice_CityYear('taipei','2019')}}</td>
+                    <td>{{callPrice_CityYear('taipei','2023')}}</td>
+                    <td>{{upRate(callPrice_CityYear('taipei','2013'),callPrice_CityYear('taipei','2023'))}}</td>
+                </tr>
+                <tr>
+                    <td>新北市</td>
+                    <td>{{callPrice_CityYear('newtaipei','2013')}}</td>
+                    <td>{{callPrice_CityYear('newtaipei','2019')}}</td>
+                    <td>{{callPrice_CityYear('newtaipei','2023')}}</td>
+                    <td>{{upRate(callPrice_CityYear('newtaipei','2013'),callPrice_CityYear('newtaipei','2023'))}}</td>
+                </tr>
+                <tr>
+                    <td>桃園市</td>
+                    <td>{{callPrice_CityYear('taoyuan','2013')}}</td>
+                    <td>{{callPrice_CityYear('taoyuan','2019')}}</td>
+                    <td>{{callPrice_CityYear('taoyuan','2023')}}</td>
+                    <td>{{upRate(callPrice_CityYear('taoyuan','2013'),callPrice_CityYear('taoyuan','2023'))}}</td>
+                </tr>
+                <tr>
+                    <td>新竹市</td>
+                    <td>{{callPrice_CityYear('hsinchu','2013')}}</td>
+                    <td>{{callPrice_CityYear('hsinchu','2019')}}</td>
+                    <td>{{callPrice_CityYear('hsinchu','2023')}}</td>
+                    <td>{{upRate(callPrice_CityYear('hsinchu','2013'),callPrice_CityYear('hsinchu','2023'))}}</td>
+                </tr>
+                <tr>
+                    <td>台中市</td>
+                    <td>{{callPrice_CityYear('taichung','2013')}}</td>
+                    <td>{{callPrice_CityYear('taichung','2019')}}</td>
+                    <td>{{callPrice_CityYear('taichung','2023')}}</td>
+                    <td>{{upRate(callPrice_CityYear('taichung','2013'),callPrice_CityYear('taichung','2023'))}}</td>
+                </tr>
+                <tr>
+                    <td>台南市</td>
+                    <td>{{callPrice_CityYear('tainan','2013')}}</td>
+                    <td>{{callPrice_CityYear('tainan','2019')}}</td>
+                    <td>{{callPrice_CityYear('tainan','2023')}}</td>
+                    <td>{{upRate(callPrice_CityYear('tainan','2013'),callPrice_CityYear('tainan','2023'))}}</td>
+                </tr>
+                <tr>
+                    <td>高雄市</td>
+                    <td>{{callPrice_CityYear('kaohsiung','2013')}}</td>
+                    <td>{{callPrice_CityYear('kaohsiung','2019')}}</td>
+                    <td>{{callPrice_CityYear('kaohsiung','2023')}}</td>
+                    <td>{{upRate(callPrice_CityYear('kaohsiung','2013'),callPrice_CityYear('kaohsiung','2023'))}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     </div>
@@ -372,16 +472,21 @@ export default{
 <style scoped lang="scss">
 
 *{
- margin: 0;
- padding: 0;
- box-sizing: border-box;   
-//  background-color: #e5e5f7;
-background-color:#F1EFE5;
-// font-family: "Shippori Mincho", serif;
-font-family: "Zen Old Mincho", serif;
-// font-weight: 200;
-// font-style: normal;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+    //  background-color: #e5e5f7;
+    background-color:#F1EFE5;
+    // font-family: "Shippori Mincho", serif;
+    font-family: "Zen Old Mincho", serif;
+    // font-weight: 200;
+    // font-style: normal;
+    }
+
+.top{
+    width: 100dvw;
+    height: 5dvh;
+}    
 
 .chartOuter{
 
@@ -465,19 +570,22 @@ font-family: "Zen Old Mincho", serif;
 
 .tableArea{
     width: 100dvw;
-    height: 80dvh;
+    height: 100dvh;
     background-color: #F8C3CD;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-spacing:0;
+    font-size: 20px;
     
     th{
         background-color: #e293a2;
     }
     
     th,td{
-        padding: 10px
+        padding: 10px;
+        text-align: center;
     }
 
 }
