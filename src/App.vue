@@ -12,7 +12,7 @@ import Header from './components/Header.vue'
 
 <style scoped lang="scss">
     template{
-      width: 100dvw;
+
     }
 </style>
 

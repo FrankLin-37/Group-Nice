@@ -16,7 +16,6 @@ export default{
     <RouterLink class="routeItem" to="/TaiwanMap">Map</RouterLink>
 
 </div>
-    
 </template>
 
 <style scoped lang="scss">

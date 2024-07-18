@@ -134,25 +134,25 @@ export default{
             }
 
             if(this.needYear >=50){
-                this.final = "夭壽喔這不是人辦的到的吧"
+                this.final = "不可能辦到吧！"
                 this.finalYear = 1
             }else if(this.needYear <=5){
-                this.final = "你只需要5年是天選之人吧"
+                this.final = "你是天選之人吧！"
                 this.finalYear = 2
             }else if(this.needYear <=10){
-                this.final = "10年以內能買也太扯"
+                this.final = "10年以內也太扯！"
                 this.finalYear = 3
             }else if(this.needYear <20){
-                this.final = "用不到20年太強了吧"
+                this.final = "不到20年太強了吧！"
                 this.finalYear = 4
             }else if(this.needYear <=30){
-                this.final = "還能活30年就能搞定"
+                this.final = "再活30年就能搞定！"
                 this.finalYear = 5
             }else if(this.needYear <=40){
-                this.final = "30幾年我覺得可以考慮轉職啦"
+                this.final = "該考慮轉職了啦！"
                 this.finalYear = 6
             }else if(this.needYear <50){
-                this.final = "要花40幾年還不轉職阿"
+                this.final = "這一定要轉職吧！"
                 this.finalYear = 7
             }
         },
@@ -303,7 +303,7 @@ export default{
 
         <div class="area area2">
             <div class="imageArea" v-if="this.needYear">
-                <img src="../assets/50over.png" alt="" id="" v-if="this.finalYear == 1" >
+                <img src="../assets/60over.png" alt="" id="" v-if="this.finalYear == 1" >
                 <img src="../assets/5over.png"  alt="" id="" v-if="this.finalYear == 2">
                 <img src="../assets/10over.png" alt="" id="" v-if="this.finalYear == 3">
                 <img src="../assets/20over.png" alt="" id="" v-if="this.finalYear == 4">
@@ -312,7 +312,7 @@ export default{
                 <img src="../assets/50over.png" alt="" id="" v-if="this.finalYear == 7">
             </div>
             <div class="textArea">
-                <h1>{{ this.final }}</h1>
+                <h2>{{ this.final }}</h2>
             </div>
         </div>
     </div>
@@ -320,6 +320,12 @@ export default{
 </template>
 
 <style scoped lang="scss">
+
+    * {
+    color: #728D9A;
+    background: #F1EFE5;
+    font-family: "Zen Old Mincho", serif;
+    }
 
     .main{
         width: 100%;
@@ -363,7 +369,7 @@ export default{
     img{
         position: absolute;
         left: 6%;
-        top: 37%;
+        top: 40%;
     }
 
     .smallOne{
@@ -376,10 +382,14 @@ export default{
 
     p{
         font-size: 40px;
-        margin-top: 2%;
+        margin-top: 2.7%;
     }
 
     h1{
+        font-size: 80px;
+    }
+
+    h2{
         font-size: 80px;
     }
 
