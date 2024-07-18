@@ -668,6 +668,7 @@ export default {
     * {
     color: #728D9A;
     background: #F1EFE5;
+    font-family: "Zen Old Mincho", serif;
     }
 
     // canvas{
@@ -686,6 +687,7 @@ export default {
         }
         select{
         margin: 4%;
+        // font-size: 25px;
         }
         option{
             font-size: 25px;
