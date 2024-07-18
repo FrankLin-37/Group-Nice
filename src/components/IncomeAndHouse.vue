@@ -382,7 +382,7 @@ export default{
 
     p{
         font-size: 40px;
-        margin-top: 2%;
+        margin-top: 2.7%;
     }
 
     h1{
