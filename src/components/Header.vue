@@ -9,11 +9,11 @@ export default{
 
 <template>
         <div class="headerArea">
-    <RouterLink class="routeItem" to="/">One</RouterLink>
+    <RouterLink class="routeItem" to="/">首頁</RouterLink>
     <RouterLink class="routeItem" to="/Salary">薪資中位數</RouterLink>
     <RouterLink class="routeItem" to="/Case">案例</RouterLink>
+    <RouterLink class="routeItem" to="/TaiwanMap">七都房價中位數</RouterLink>
     <RouterLink class="routeItem" to="/Donate">贊助我們</RouterLink>
-    <RouterLink class="routeItem" to="/TaiwanMap">Map</RouterLink>
 
 </div>
 </template>
