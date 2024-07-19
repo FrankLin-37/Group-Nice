@@ -40,9 +40,9 @@ export default{
 <template>
     <housePrice />
     
-    <Modal v-show="this.contralModal" @alertModal="this.showModal()" v-if="this.trigger">
+    <!-- <Modal v-show="this.contralModal" @alertModal="this.showModal()" v-if="this.trigger">
         <img src="../assets/peko/pekoGif.gif" alt="">
-    </Modal>
+    </Modal> -->
 </template>
 
 <style scoped lang="scss">

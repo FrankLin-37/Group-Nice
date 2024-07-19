@@ -44,6 +44,9 @@ export default{
         align-content: center;
         flex-direction: column;
         flex-wrap: wrap;
+        .cow{
+            padding-left: 50px;
+        }
         
         h1{
             margin-left: 0.5%;
