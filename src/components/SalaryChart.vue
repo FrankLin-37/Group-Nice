@@ -246,6 +246,8 @@ export default {
 <template>
     <!-- <button @click="Tester()">Btn</button> -->
 
+    <h4>請選擇希望在圖表中看到的項目</h4>
+
     <div class="area">
         <div class="block">
         <select name="firstchoose" id="" v-model="firstChoose1" @change = "this.createlabel()">
@@ -676,6 +678,12 @@ export default {
     color: #728D9A;
     background: #F1EFE5;
     font-family: "Zen Old Mincho", serif;
+    }
+
+    h4{
+        position: absolute;
+        left: 4%;
+        top: 10%;
     }
 
     // canvas{

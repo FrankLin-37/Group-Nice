@@ -15,8 +15,8 @@ export default{
     <div class="space"></div>
     <div class="main">
         <h1>如果喜歡請贊助我們</h1>
-        <img src="../assets/pay-nobg.png" alt="Qcode">
-        <img src="../assets/peko/乳牛走路.gif" alt="乳牛走路">
+        <img src="../assets/pay-nobg.png" alt="Qcode" class="QR">
+        <img src="../assets/peko/乳牛走路.gif" alt="乳牛走路" class="cow">
 
     </div>
 
@@ -48,6 +48,15 @@ export default{
         h1{
             margin-left: 0.5%;
             font-size: 3.5rem;
+        }
+
+        .QR{
+            margin-right: 3%;
+        }
+
+        .cow{
+            width: 50dvw;
+            height: 80dvh;
         }
     }
 </style>
