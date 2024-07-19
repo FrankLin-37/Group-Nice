@@ -1,5 +1,6 @@
 <script>
 import 'youtube-background';
+import Modal from '../components/Modal.vue'
 jQuery(document).ready(function() {
             jQuery('[data-vbg]').youtube_background();
             const videoBackgrounds = VIDEO_BACKGROUNDS;
@@ -7,6 +8,8 @@ jQuery(document).ready(function() {
 export default {
    data(){
       return{
+         contralModal:false,
+         trigger:true,
 
          choose:"",
          
@@ -171,6 +174,18 @@ export default {
       };
    },
    methods: {
+      showModal(){
+            this.contralModal= !this.contralModal
+        },
+        triggerTimeout() {
+            setTimeout(() => {
+                this.print();
+             }, 3000);
+            },
+        print() {
+            console.log("觸發!!!!!!!!!!");
+            this.trigger = false
+         }, 
       handleMouseEnter(target) {
             console.log(target.id);
             this.choose = target.id;
@@ -195,7 +210,12 @@ export default {
          })
       }
    },
+   components: {
+      Modal
+    },
    mounted(){
+      this.triggerTimeout()
+      this.showModal()
       this.getAll()
    },
 }
@@ -204,6 +224,10 @@ export default {
 </script>
 
 <template>
+    <Modal v-show="this.contralModal" @alertModal="this.showModal()" v-if="this.trigger">
+        <img id="peko" src="../assets/peko/pekoGif.gif" alt="">
+    </Modal>
+
    <div class="headerBox">
    <div class="back-videos"><div class="videos" data-vbg="https://www.youtube.com/watch?v=5UUPXJiTBec"></div></div>
 </div>
@@ -337,6 +361,16 @@ export default {
 </template>
 
 <style scoped lang="scss">
+
+#peko{
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
 .back-videos{
    width: 100%;
    height: 100dvh;

@@ -337,7 +337,7 @@ export default{
         }
     },
     
-    methods:{
+    methods:{   
                 taiwanChart(){
 
                     function moneyUnit(array){
@@ -601,6 +601,9 @@ export default{
                             this.districtData = this.cityDetail[this.selectedCity].district_prices[this.selectedDistrict];
                         }
                     this.selectedDistrict = '' 
+                    if (!this.districtData[0]) {
+                        this.districtData[0] = 0;
+                    }
                     return this.transNumberUnit(this.districtData[0])
                     },    
 
@@ -784,7 +787,7 @@ export default{
             <div class="displayArea">
                 <!-- <h1>{{selectedCity}}</h1> -->
                 <!-- <h1>{{selectedDistrict}}</h1> -->
-                <h1>房價中位數: {{getDistrictPrice()}}(萬)</h1>
+                <h1>房價中位數: {{getDistrictPrice()}} (萬)</h1>
             </div>
 
         </div>
@@ -1090,7 +1093,7 @@ export default{
         margin: 10px;
     }
     h1{
-        font-size: 45px;
+        font-size: 30px;
         padding-bottom: 10px;
         padding-right:0px;
         color: #728D9A;
