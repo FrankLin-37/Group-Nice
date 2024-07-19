@@ -16,8 +16,7 @@ export default{
     <div class="main">
         <h1>如果喜歡請贊助我們</h1>
         <img src="../assets/pay-nobg.png" alt="Qcode">
-        <img src="../assets/peko/乳牛走路.gif" alt="乳牛走路">
-
+        <img class = "cow" src="../assets/peko/乳牛走路.gif" alt="乳牛走路">
     </div>
 
 </template>
@@ -44,6 +43,9 @@ export default{
         align-content: center;
         flex-direction: column;
         flex-wrap: wrap;
+        .cow{
+            padding-left: 50px;
+        }
         
         h1{
             margin-left: 0.5%;
