@@ -292,6 +292,7 @@ export default{
         <div class="area area1">
             <p>房價：</p>
             <h1>{{ this.housePrice }}</h1>
+            <p>萬　</p>
 
             <p>　薪資：</p>
             <h1>{{ this.income }}</h1>
