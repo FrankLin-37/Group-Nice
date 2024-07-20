@@ -112,6 +112,7 @@ export default {
                 itemData5 = this.salDataSet1[this.checked5 - 1];
             }
 
+            const dash = (ctx, value)=> ctx.p0DataIndex > labels.indexOf('2022') ? value:[6,0];
             const data = {
                 labels: labels,
                 datasets: [{
@@ -122,6 +123,9 @@ export default {
                     pointStyle: 'circle',
                     pointRadius: 5,
                     pointHoverRadius: 15,
+                    segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
 
                     },
                     {   
@@ -132,6 +136,9 @@ export default {
                         pointStyle: 'circle',
                         pointRadius: 5,
                         pointHoverRadius: 15,
+                        segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                     },
                     {   
                         label: this.Title1[this.checked3-1],
@@ -141,6 +148,9 @@ export default {
                         pointStyle: 'circle',
                         pointRadius: 5,
                         pointHoverRadius: 15,
+                        segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                     },
                     {   
                         label: this.Title1[this.checked4-1],
@@ -150,6 +160,9 @@ export default {
                         pointStyle: 'circle',
                         pointRadius: 5,
                         pointHoverRadius: 15,
+                        segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                     },
                     {   
                         label: this.Title1[this.checked5-1],
@@ -159,6 +172,9 @@ export default {
                         pointStyle: 'circle',
                         pointRadius: 5,
                         pointHoverRadius: 15,
+                        segment:{
+                                borderDash:ctx=>dash(ctx, [6,6]) || [6,0]
+                            },
                     }
                 ]
             };

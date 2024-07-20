@@ -371,7 +371,7 @@ export default{
                         pointHoverRadius:15
                     }
 
-                    const dash = (ctx, value)=> ctx.p0DataIndex > labels.indexOf('2022') ? value:[6,0];
+                    const dash = (ctx, value)=> ctx.p0DataIndex > labels.indexOf('2023') ? value:[6,0];
                     const data = {
                         labels:labels,
                         datasets: [{
