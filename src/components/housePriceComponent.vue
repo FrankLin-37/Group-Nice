@@ -949,12 +949,12 @@ export default{
     padding: 0;
     box-sizing: border-box;   
     //  background-color: #e5e5f7;
-    background-color:#F1EFE5;
+    // background-color:#F1EFE5;
     // font-family: "Shippori Mincho", serif;
     font-family: "Zen Old Mincho", serif;
     // font-weight: 200;
     // font-style: normal;
-    
+    background-color:#F1EFE5;
     }
 
 .top{
@@ -963,7 +963,7 @@ export default{
 }    
 
 .chartOuter{
-
+    background-color:#F1EFE5;
     width: 100dvw;
     height: 100dvh;
 
@@ -982,7 +982,7 @@ export default{
             padding-left: 10%;
             font-size: 55px;
             writing-mode: vertical-lr ;
-            color: #728D9A;
+            color: black;
             }
             #myChart{
                 margin-top: 5%;
@@ -1053,17 +1053,17 @@ export default{
     flex-wrap: wrap;
     padding-bottom: 250px;
     padding-right: 150px;
-    color: #728D9A;
+    color: black;
     
     th{
         background-color: rgb(240, 211, 211);
-        color: white;
+        color: black;
     }
     
     th,td{
         padding: 10px;
         text-align: center;
-        color: #728D9A;
+        color: black;
     }
     .TableUpRate{
         position: absolute;
@@ -1093,12 +1093,22 @@ export default{
         margin: 10px;
     }
     h1{
-        font-size: 30px;
+        font-size: 50px;
         padding-bottom: 10px;
         padding-right:0px;
-        color: #728D9A;
+        color: black;
         padding: 20px;
-        // background-color: #e293a2
+        position: relative;
+        &:before{
+            content: "";
+            background-color: rgb(252, 146, 183);
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+
+        }
     }
     .displayArea{
         width: 100%;
@@ -1115,7 +1125,7 @@ export default{
 
         h1{
             font-size: 40px;}
-            color: #728D9A;
+            color: black;
     }
   }
 }

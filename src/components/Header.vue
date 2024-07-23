@@ -26,14 +26,24 @@ export default{
     display: flex;
     align-items: center;
     font-size: 21px;
-    background-color: #8A8675;
+    // background-color: #8A8675;
+    background-color: black;
     transition: 0.5s;
     position: fixed;
     z-index: 1;
+    opacity: 0.6;
     .routeItem{
         font-size: 24px;
         padding-left: 8%;
         color: aliceblue;
+        &:nth-child(1){
+            // margin-left:100px ;
+            margin-right:100px ;
+            // padding-left:100px ;
+            // padding-right:200px ;
+        }
     }
+
+    
 }
 </style>
